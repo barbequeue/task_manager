@@ -1,5 +1,5 @@
 $('.project__delete-button').off('ajax:success').bind('ajax:success', function() {
-  const project = $(this).parent('.project');
+  const project = $(this).parents('.project');
 
   project.fadeOut(300, () => project.remove());
 });

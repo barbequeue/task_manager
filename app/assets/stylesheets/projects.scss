@@ -1,3 +1,19 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.project {
+  height: 50px;
+
+  &__action-button {
+    line-height: normal;
+  }
+
+  &__name-field {
+    border: {
+      right: 0 !important;
+      top: 0 !important;
+      left: 0 !important;
+    }
+  }
+}
