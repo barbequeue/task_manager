@@ -1,0 +1,4 @@
+<%= form_with(model: project, html: { class: "project__form", autocomplete: "off" }) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>

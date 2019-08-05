@@ -1,0 +1,14 @@
+<div class="project">
+  <div class="project__title">
+      <%= project.name %>
+  </div>
+  <%= link_to "edit",
+    edit_project_url(project),
+    class: 'project__edit-button',
+    remote: true %>
+  <%= link_to "delete",
+    project,
+    method: :delete,
+    class: 'project__delete-button',
+    remote: true %>
+</div>
