@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  resources :projects
+  resources :projects do
+    resources :tasks do
+      member do
+        patch 'checkout'
+      end
+    end
+  end
 end

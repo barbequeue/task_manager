@@ -1,7 +1,5 @@
-require 'pry'
-
 class ProjectsController < ApplicationController
-  before_action :require_project, only: [:edit, :update, :destroy]
+  before_action :require_project, only: %I[edit update destroy]
 
   def index
     @projects = Project.all.order(created_at: :desc)
