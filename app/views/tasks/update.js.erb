@@ -1,0 +1,5 @@
+$('.task__form').off('ajax:success').bind('ajax:success', function() {
+  const task = $(this).parents('.task');
+
+  task.find('.task__title').html("<%= j @task.name %>")
+});

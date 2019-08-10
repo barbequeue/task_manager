@@ -1,0 +1,5 @@
+$('.task__form').off('ajax:success').bind('ajax:success', function() {
+  const project = $(this).parents('.project')
+
+  project.find('.tasks').append("<%= j render @task %>")
+});

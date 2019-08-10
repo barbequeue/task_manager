@@ -1,0 +1,13 @@
+.action-button {
+  line-height: normal;
+}
+
+.form {
+  &__text-input {
+    border: {
+      right: 0 !important;
+      top: 0 !important;
+      left: 0 !important;
+    }
+  }
+}

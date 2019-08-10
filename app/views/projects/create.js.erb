@@ -1,0 +1,3 @@
+$('.project__form').off('ajax:success').bind('ajax:success', function() {
+  $('.projects').prepend("<%= j render @project %>");
+});

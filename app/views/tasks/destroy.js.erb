@@ -1,0 +1,5 @@
+$('.task__delete-button').off('ajax:success').bind('ajax:success', function() {
+  const task = $(this).parents('.task');
+
+  task.fadeOut(300, () => task.remove());
+});

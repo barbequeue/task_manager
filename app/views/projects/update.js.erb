@@ -1,0 +1,5 @@
+$('.project__form').off('ajax:success').bind('ajax:success', function() {
+  const container = $(this).parents('.project').find('.project__title');
+
+  container.html("<%= j @project.name %>");
+});
