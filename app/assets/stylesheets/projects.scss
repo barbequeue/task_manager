@@ -9,5 +9,9 @@
       top: 0 !important;
       left: 0 !important;
     }
+
+    &:focus {
+      box-shadow: none !important;
+    }
   }
 }

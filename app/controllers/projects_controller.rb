@@ -1,9 +1,10 @@
 class ProjectsController < ApplicationController
   before_action :require_project, only: %I[edit update destroy]
+  before_action :authenticate_user!
 
   def index
-    @projects = Project.all.order(created_at: :desc)
-    @project = Project.new
+    @projects = current_user.projects.order(created_at: :desc)
+    @project = current_user.projects.new
   end
 
   def edit
@@ -15,7 +16,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.new(project_params)
 
     respond_to do |format|
       if @project.save
@@ -54,6 +55,6 @@ class ProjectsController < ApplicationController
   end
 
   def require_project
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find(params[:id])
   end
 end

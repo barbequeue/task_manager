@@ -1,14 +1,10 @@
-<div class="container">
-  <div class="row justify-content-center my-4">
-    <div class="col-12 col-md-10 col-lg-8">
-      <div class="shadow-sm px-4 py-2">
-        <%= render "form", project: @project %>
-      </div>
-    </div>
-  </div>
+<div class="container py-5">
   <div class="row justify-content-center">
     <div class="col-12 col-md-10 col-lg-8">
-      <div class="projects">
+      <div class="bg-white shadow-sm px-4 py-2">
+        <%= render "form", project: @project %>
+      </div>
+      <div class="projects d-flex flex-column">
         <%= render @projects %>
       </div>
     </div>
