@@ -8,16 +8,16 @@
           </a>
 
           <div class="dropdown-menu">
-            <%= link_to "Проекты", projects_url, class: 'dropdown-item' %>
-            <%= link_to "Настройки", edit_user_registration_url, class: 'dropdown-item' %>
+            <%= link_to "Projects", projects_url, class: 'dropdown-item' %>
+            <%= link_to "Settings", edit_user_registration_url, class: 'dropdown-item' %>
             <div class="dropdown-divider"></div>
-            <%= link_to "Выйти", destroy_user_session_url, method: :delete, class: 'dropdown-item' %>
+            <%= link_to "Log Out", destroy_user_session_url, method: :delete, class: 'dropdown-item' %>
           </div>
         </div>
       <% else %>
         <nav class="nav">
-          <%= link_to "Войти", new_user_session_url, class: 'nav-link' %>
-          <%= link_to "Регистрация", new_user_registration_url, class: 'nav-link' %>
+          <%= link_to "Log In", new_user_session_url, class: 'nav-link' %>
+          <%= link_to "Sign Up", new_user_registration_url, class: 'nav-link' %>
         </nav>
       <% end %>
     </div>

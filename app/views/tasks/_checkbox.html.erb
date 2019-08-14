@@ -1,0 +1,1 @@
+<%= check_box_tag :checked, task.checked, task.checked, data: { 'remote': 'true', 'url': checkout_project_task_url(task.project, task), 'method': 'patch' }, class: 'task__checkbox d-block' %>

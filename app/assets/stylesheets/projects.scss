@@ -3,7 +3,8 @@
 }
 
 .form {
-  &__text-input {
+  &__text-input,
+  &__date-input {
     border: {
       right: 0 !important;
       top: 0 !important;
@@ -20,6 +21,24 @@
       &::placeholder {
         color: #ff5252 !important
       }
+    }
+  }
+
+  &__date-input {
+    &::before {
+      font-family: FontAwesome;
+      position: absolute;
+      content: '\f073';
+      right: 0;
+    }
+
+    &::-webkit-clear-button,
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+
+    &::-webkit-calendar-picker-indicator {
+      opacity: 0;
     }
   }
 

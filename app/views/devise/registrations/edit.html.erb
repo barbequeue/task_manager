@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center mt-5">
   <div class="user-auth-form flex-grow-1 bg-white shadow-sm p-4">
-    <h2 class="text-center mb-4">Настройки аккаунта</h2>
+    <h2 class="text-center mb-4">Account settings</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, autocomplete: 'off' }) do |f| %>
       <div class="mb-4">
@@ -12,33 +12,33 @@
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Ожидается подтверждение для: <%= resource.unconfirmed_email %></div>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
 
       <div class="form-group">
-        <%= f.password_field :password, placeholder: 'Новый пароль', class: 'form-control form__text-input rounded-0 px-0' %>
+        <%= f.password_field :password, placeholder: 'New password', class: 'form-control form__text-input rounded-0 px-0' %>
         <% if @minimum_password_length %>
-          <small>минимальная длина: <%= @minimum_password_length %></small>
+          <small>minimal length: <%= @minimum_password_length %></small>
         <% end %>
       </div>
 
       <div class="form-group">
-        <%= f.password_field :password_confirmation, placeholder: 'Новый пароль ещё раз', class: 'form-control form__text-input rounded-0 px-0' %>
+        <%= f.password_field :password_confirmation, placeholder: 'New password confirmation', class: 'form-control form__text-input rounded-0 px-0' %>
       </div>
 
       <div class="form-group">
-        <%= f.password_field :current_password, placeholder: 'Старый пароль', class: 'form-control form__text-input rounded-0 px-0' %>
+        <%= f.password_field :current_password, placeholder: 'Current password', class: 'form-control form__text-input rounded-0 px-0' %>
       </div>
 
-      <%= f.submit "Сохранить", class: 'btn btn-block btn-primary rounded-0 shadow-sm mt-4' %>
+      <%= f.submit "Save", class: 'btn btn-block btn-primary rounded-0 shadow-sm mt-4' %>
     <% end %>
 
     <hr class="my-4" />
 
-    <%= button_to "Деактивировать аккаунт", registration_path(resource_name), method: :delete, class: 'btn btn-block btn-danger rounded-0 shadow-sm' %>
+    <%= button_to "Deactivate account", registration_path(resource_name), method: :delete, class: 'btn btn-block btn-danger rounded-0 shadow-sm' %>
 
     <div class="d-flex justify-content-center mt-4">
-      <%= link_to "Назад", :back %>
+      <%= link_to "Back", :back %>
     </div>
   </div>
 </div>

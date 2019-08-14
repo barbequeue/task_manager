@@ -44,6 +44,11 @@ class TasksController < ApplicationController
 
   def checkout
     @task.update_attributes(checked: !@task.checked)
+
+    respond_to do |format|
+      format.js
+      format.json { render json: @task, status: 200 }
+    end
   end
 
   private
@@ -53,6 +58,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:name, :project_id)
+    params.require(:task).permit(:name, :project_id, :expires)
   end
 end
