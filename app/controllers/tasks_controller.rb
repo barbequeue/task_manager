@@ -3,39 +3,42 @@ class TasksController < ApplicationController
 
   def edit
     respond_to do |format|
-      format.html { redirect_to projects_url }
       format.js
-      format.json { render json: @project }
+      format.json { render json: @task, status: 200 }
     end
   end
 
   def create
     @task = Task.new(task_params)
     @task.project_id = params[:project_id]
+
     respond_to do |format|
       if @task.save
-        format.html { redirect_to projects_url }
         format.js
-        format.json { render json: @task, status: :created }
+        format.json { render json: @task, status: 200 }
+      else
+        format.json { render json: @task.errors.messages, status: 422 }
       end
     end
   end
 
   def update
-    @task.update(task_params)
     respond_to do |format|
-      format.html { redirect_to projects_url }
-      format.js
-      format.json { render json: @project }
+      if @task.update(task_params)
+        format.js
+        format.json { render json: @task, status: 200 }
+      else
+        format.json { render json: @task.errors.messages, status: 422 }
+      end
     end
   end
 
   def destroy
     @task.destroy
+
     respond_to do |format|
-      format.html { redirect_to projects_url }
       format.js
-      format.json { render json: @task, status: :deleted }
+      format.json { render json: @task, status: 200 }
     end
   end
 

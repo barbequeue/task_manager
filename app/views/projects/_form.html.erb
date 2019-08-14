@@ -1,6 +1,9 @@
-<%= form_with(model: project, html: { class: 'project__form form-inline', autocomplete: 'off' }) do |f| %>
-  <%= f.text_field :name,
-    placeholder: 'Имя проекта',
-    class: 'form-control form__text-input rounded-0 px-0' %>
+<%= form_with(model: project, html: { class: 'project__form form-inline align-items-start', autocomplete: 'off' }) do |f| %>
+  <div>
+    <%= f.text_field :name,
+      placeholder: 'Имя проекта',
+      class: 'form-control form__text-input rounded-0 px-0' %>
+    <div class="form__error-message small"></div>
+  </div>
   <%= f.submit class: 'btn btn-success rounded-0 shadow-sm ml-sm-3 mt-3 mt-sm-0' %>
 <% end %>
