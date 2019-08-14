@@ -1,0 +1,6 @@
+$('.task__checkbox').off('ajax:success').bind('ajax:success', function() {
+  const container = $(this).parent()
+
+  container.find('.task__checkbox').remove()
+  container.prepend("<%= j render 'tasks/checkbox', task: @task %>")
+});

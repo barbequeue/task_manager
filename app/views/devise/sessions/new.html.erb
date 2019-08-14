@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center mt-5">
   <div class="user-auth-form flex-grow-1 bg-white shadow-sm p-4">
-    <h2 class="text-center mb-4">Вход</h2>
+    <h2 class="text-center mb-4">Log In</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { autocomplete: 'off' }) do |f| %>
       <div class="mb-4">
@@ -12,17 +12,17 @@
       </div>
 
       <div class="form-group">
-        <%= f.password_field :password, placeholder: 'Пароль', class: 'form-control form__text-input rounded-0 px-0' %>
+        <%= f.password_field :password, placeholder: 'Password', class: 'form-control form__text-input rounded-0 px-0' %>
       </div>
 
       <% if devise_mapping.rememberable? %>
         <div class="form-check">
           <%= f.check_box :remember_me, class: 'form-check-input' %>
-          <%= f.label :remember_me, 'запомнить меня', class: 'mb-0' %>
+          <%= f.label :remember_me, 'remember me', class: 'mb-0' %>
         </div>
       <% end %>
 
-      <%= f.submit "Вход", class: 'btn btn-block btn-primary rounded-0 shadow-sm mt-4' %>
+      <%= f.submit "Log In", class: 'btn btn-block btn-primary rounded-0 shadow-sm mt-4' %>
     <% end %>
 
     <div class="d-flex flex-column align-items-center mt-4">

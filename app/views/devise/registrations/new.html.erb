@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center mt-5">
   <div class="user-auth-form flex-grow-1 bg-white shadow-sm p-4">
-    <h2 class="text-center mb-4">Регистрация</h2>
+    <h2 class="text-center mb-4">Sign Up</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { autocomplete: 'off' }) do |f| %>
       <div class="mb-4">
@@ -12,20 +12,20 @@
       </div>
 
       <div class="form-group">
-        <%= f.password_field :password, placeholder: 'Пароль', class: 'form-control form__text-input rounded-0 px-0' %>
+        <%= f.password_field :password, placeholder: 'Password', class: 'form-control form__text-input rounded-0 px-0' %>
 
         <% if @minimum_password_length %>
           <small class="text-muted">
-            минимальная длина: <%= @minimum_password_length %>
+            minimal length: <%= @minimum_password_length %>
           </small>
         <% end %>
       </div>
 
       <div class="form-group">
-        <%= f.password_field :password_confirmation, placeholder: 'Пароль ещё раз', class: 'form-control form__text-input rounded-0 px-0' %>
+        <%= f.password_field :password_confirmation, placeholder: 'Password confirmation', class: 'form-control form__text-input rounded-0 px-0' %>
       </div>
 
-      <%= f.submit "Далее", class: 'btn btn-block btn-primary rounded-0 shadow-sm' %>
+      <%= f.submit "Sign Up", class: 'btn btn-block btn-primary rounded-0 shadow-sm mt-4' %>
     <% end %>
 
     <div class="d-flex flex-column align-items-center mt-4">
