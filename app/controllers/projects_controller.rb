@@ -9,9 +9,8 @@ class ProjectsController < ApplicationController
 
   def edit
     respond_to do |format|
-      format.html { redirect_to projects_url }
       format.js
-      format.json { render json: @project }
+      format.json { render json: @project, status: 200 }
     end
   end
 
@@ -20,31 +19,31 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to projects_url }
         format.js
-        format.json { render json: @project, status: :created }
+        format.json { render json: @project, status: 200 }
       else
-        format.html { render action: "index" }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+        format.json { render json: @project.errors.messages, status: 422 }
       end
     end
   end
 
   def update
-    @project.update(project_params)
     respond_to do |format|
-      format.html { redirect_to projects_url }
-      format.js
-      format.json { render json: @project }
+      if @project.update(project_params)
+        format.js
+        format.json { render json: @project, status: 200 }
+      else
+        format.json { render json: @project.errors.messages, status: 422 }
+      end
     end
   end
 
   def destroy
     @project.destroy
+
     respond_to do |format|
-      format.html { redirect_to projects_url }
       format.js
-      format.json { render json: @project, status: :deleted }
+      format.json { render json: @project, status: 200 }
     end
   end
 

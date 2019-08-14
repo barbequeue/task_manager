@@ -13,5 +13,17 @@
     &:focus {
       box-shadow: none !important;
     }
+
+    &_invalid {
+      border-color: #ff5252 !important;
+
+      &::placeholder {
+        color: #ff5252 !important
+      }
+    }
+  }
+
+  &__error-message {
+    color: #ff5252;
   }
 }
