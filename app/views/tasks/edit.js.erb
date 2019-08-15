@@ -1,5 +1,9 @@
 $('.task__edit-button').off('ajax:success').bind('ajax:success', function() {
   const task = $(this).parents('.task');
 
-  task.find('.task__title').html("<%= j render "tasks/form", project: @task.project, task: @task %>")
+  task.find('.task__checkbox').toggleClass('d-none');
+  task.find('.task__title').toggleClass('d-none');
+
+  task.find('.task__form-container').toggleClass('d-none');
+  task.find('.task__form-container').html("<%= j render "tasks/form", project: @task.project, task: @task %>")
 });

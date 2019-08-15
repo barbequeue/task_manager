@@ -1,5 +1,7 @@
 $('.project__edit-button').off('ajax:success').bind('ajax:success', function() {
-  const container = $(this).parents('.project').find('.project__title');
+  const container = $(this).parents('.project').find('.project__form-container');
+  $(container).toggleClass('d-none');
+  $(this).parents('.project').find('.project__title').toggleClass('d-none');
 
   container.html("<%= j render "form", project: @project %>");
 });

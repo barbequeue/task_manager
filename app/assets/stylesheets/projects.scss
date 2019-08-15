@@ -2,6 +2,12 @@
   line-height: normal;
 }
 
+.project {
+  &__title {
+    width: 200px;
+  }
+}
+
 .form {
   &__text-input,
   &__date-input {
